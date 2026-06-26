@@ -45,7 +45,7 @@ const Statistics = () => {
               decisions.
             </p>
           </div>
-          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-20 text-center md:text-left">
+          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-10 md:mt-20 text-center md:text-left">
             <span className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-15 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
               <img src={iconFullyCustomizable} alt="" />
             </span>
