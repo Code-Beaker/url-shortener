@@ -74,7 +74,7 @@ const Statistics = () => {
           </h2>
           <div className="flex justify-center items-center p-6">
             <a
-              href=""
+              href="#shorten"
               className="font-bold text-md md:text-lg text-white bg-teal-500 px-6 py-2 rounded-full cursor-pointer hover:bg-teal-600"
             >
               Get started

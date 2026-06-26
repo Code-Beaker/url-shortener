@@ -50,7 +50,7 @@ const Shortener = () => {
   }
 
   return (
-    <div className="bg-slate-200">
+    <div id="shorten" className="bg-slate-200">
       <div className="flex justify-center items-center p-8">
         <div className="relative z-10 shadow-xl w-[50em] rounded-xl overflow-hidden p-4 md:p-10">
           <picture>

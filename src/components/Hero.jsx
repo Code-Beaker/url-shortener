@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
           <a
             className="text-md md:text-xl font-bold text-white bg-teal-500 px-6 py-3 my-2 inline-block rounded-full hover:bg-teal-600"
-            href=""
+            href="#shorten"
           >
             Get started
           </a>
