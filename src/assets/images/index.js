@@ -1,0 +1,14 @@
+export { default as bgBoostDesktop } from "./bg-boost-desktop.svg";
+export { default as bgBoostMobile } from "./bg-boost-mobile.svg";
+export { default as bgShortenDesktop } from "./bg-shorten-desktop.svg";
+export { default as bgShortenMobile } from "./bg-shorten-mobile.svg";
+// export { default as favicon32x32 } from "./favicon-32x32.png";
+export { default as iconBrandRecognition } from "./icon-brand-recognition.svg";
+export { default as iconDetailedRecords } from "./icon-detailed-records.svg";
+export { default as iconFacebook } from "./icon-facebook.svg";
+export { default as iconFullyCustomizable } from "./icon-fully-customizable.svg";
+export { default as iconInstagram } from "./icon-instagram.svg";
+export { default as iconPinterest } from "./icon-pinterest.svg";
+export { default as iconTwitter } from "./icon-twitter.svg";
+export { default as illustrationWorking } from "./illustration-working.svg";
+export { default as logo } from "./logo.svg";
