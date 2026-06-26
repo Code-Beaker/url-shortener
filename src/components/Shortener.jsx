@@ -89,7 +89,7 @@ const Shortener = () => {
               className="flex flex-col md:flex-row justify-between items-center p-4"
               key={link.shortened}
             >
-              <p className="text-slate-600">{link.original}</p>
+              <p className="text-slate-600 truncate">{link.original}</p>
               <div className="flex gap-4 items-center">
                 <p className="font-medium text-teal-600">{link.shortened}</p>
                 <button
