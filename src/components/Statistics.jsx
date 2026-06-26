@@ -10,7 +10,7 @@ import {
 const Statistics = () => {
   return (
     <div>
-      <div className="p-16 md:p-32 bg-slate-200">
+      <div className="p-8 md:p-16 lg:p-32 bg-slate-200">
         <h1 className="font-bold text-center text-4xl md:text-5xl text-slate-900 my-4">
           Advanced statistics
         </h1>
@@ -18,9 +18,9 @@ const Statistics = () => {
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
-        <div className="relative flex justify-between gap-6 py-16 h-fit">
-          <div className="relative h-fit p-4 md:p-10 pt-32 bg-white rounded">
-            <span className="absolute -top-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
+        <div className="relative flex flex-col md:flex-row justify-between gap-6 py-16 h-fit text-center md:text-left">
+          <div className="relative h-fit p-4 md:p-10 bg-white rounded">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
               <img src={iconBrandRecognition} alt="" />
             </span>
             <h2 className="text-slate-900 font-bold text-xl md:text-2xl mb-2 mt-10">
@@ -32,8 +32,8 @@ const Statistics = () => {
               content.
             </p>
           </div>
-          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-8">
-            <span className="absolute -top-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
+          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-8 text-center md:text-left">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
               <img src={iconDetailedRecords} alt="" />
             </span>
             <h2 className="text-slate-900 font-bold text-xl md:text-2xl mb-2 mt-8">
@@ -45,8 +45,8 @@ const Statistics = () => {
               decisions.
             </p>
           </div>
-          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-20">
-            <span className="absolute -top-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
+          <div className="relative h-fit p-4 md:p-10 bg-white rounded mt-20 text-center md:text-left">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-10 w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
               <img src={iconFullyCustomizable} alt="" />
             </span>
             <h2 className="text-slate-900 font-bold text-xl md:text-2xl mb-2 mt-8">

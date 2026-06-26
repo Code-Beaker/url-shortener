@@ -5,9 +5,10 @@ import Shortener from "./Shortener";
 const Hero = () => {
   return (
     <section>
-      <div className="grid grid-cols-2 p-14 md:p-26 items-center gap-10">
-        <div>
-          <h1 className="text-2xl md:text-7xl font-bold text-slate-900 my-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 p-14 md:p-26 items-center gap-10">
+        <img className="block md:hidden" src={illustrationWorking} alt="" />
+        <div className="text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 my-4">
             More than just shorter links
           </h1>
           <p className="text-slate-500 text-lg md:text-xl font-medium my-4">
@@ -22,7 +23,7 @@ const Hero = () => {
           </a>
         </div>
         <div>
-          <img src={illustrationWorking} alt="" />
+          <img className="hidden md:block" src={illustrationWorking} alt="" />
         </div>
       </div>
       <div>

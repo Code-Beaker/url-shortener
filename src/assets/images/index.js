@@ -12,3 +12,4 @@ export { default as iconPinterest } from "./icon-pinterest.svg";
 export { default as iconTwitter } from "./icon-twitter.svg";
 export { default as illustrationWorking } from "./illustration-working.svg";
 export { default as logo } from "./logo.svg";
+export { default as menu } from "./menu.svg";

@@ -50,9 +50,9 @@ const Shortener = () => {
   }
 
   return (
-    <div>
+    <div className="bg-slate-200">
       <div className="flex justify-center items-center p-8">
-        <div className="relative w-[50em] rounded-xl overflow-hidden p-4 md:p-8">
+        <div className="relative z-10 shadow-xl w-[50em] rounded-xl overflow-hidden p-4 md:p-10">
           <picture>
             <source media="(max-width: 768px)" srcSet={bgShortenMobile} />
             <img
@@ -63,7 +63,7 @@ const Shortener = () => {
           </picture>
           <form
             onSubmit={handleFormSubmit}
-            className="flex gap-3 justify-center items-center w-full"
+            className="flex flex-col md:flex-row gap-3 justify-center items-center w-full"
           >
             {links.map((link) => {
               <span>{link}</span>;
@@ -71,11 +71,11 @@ const Shortener = () => {
             <input
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              className="px-6 py-3 w-180 bg-white rounded-lg border-none outline-none"
+              className="px-6 py-3 text-md md:text-lg w-full md:w-180 bg-white rounded-lg border-none outline-none"
               placeholder="paste your link here..."
               type="url"
             />
-            <button className="px-6 py-3 bg-teal-500 font-bold text-white rounded-md cursor-pointer hover:bg-teal-600">
+            <button className="w-full md:w-fit px-6 py-3 bg-teal-500 font-bold text-white rounded-md cursor-pointer hover:bg-teal-600">
               Shorten
             </button>
           </form>
