@@ -11,7 +11,7 @@ const Shortener = () => {
       return;
     }
 
-    const response = await fetch("http://localhost:3000/shorten", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
