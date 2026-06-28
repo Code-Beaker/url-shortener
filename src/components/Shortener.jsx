@@ -4,34 +4,41 @@ import { bgShortenDesktop, bgShortenMobile, logo } from "../assets/images";
 const Shortener = () => {
   const [url, setUrl] = useState("");
   const [links, setLinks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   async function handleFormSubmit(e) {
     e.preventDefault();
     if (!url.trim()) {
       return;
     }
+    setLoading(true);
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          url,
+        }),
+      });
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        url,
-      }),
-    });
+      const data = await response.json();
+      setLinks((prevLinks) => [
+        ...prevLinks,
+        {
+          original: url,
+          shortened: data.data.tiny_url,
+          copied: false,
+        },
+      ]);
 
-    const data = await response.json();
-    setLinks((prevLinks) => [
-      ...prevLinks,
-      {
-        original: url,
-        shortened: data.data.tiny_url,
-        copied: false,
-      },
-    ]);
-
-    setUrl("");
+      setUrl("");
+    } catch (error) {
+      console.error("Couldn't fetch results: ", error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function handleLinkCopy(shortenedUrl) {
@@ -75,7 +82,10 @@ const Shortener = () => {
               placeholder="paste your link here..."
               type="url"
             />
-            <button className="w-full md:w-fit px-6 py-3 bg-teal-500 font-bold text-white rounded-md cursor-pointer hover:bg-teal-600">
+            <button
+              disabled={loading}
+              className="w-full md:w-fit px-6 py-3 bg-teal-500 font-bold text-white rounded-md cursor-pointer hover:bg-teal-600"
+            >
               Shorten
             </button>
           </form>
@@ -83,25 +93,31 @@ const Shortener = () => {
       </div>
       {/* Output */}
       <div className="py-4 px-16 md:px-32">
-        {links.map((link) => {
-          return (
-            <div
-              className="flex flex-col md:flex-row justify-between items-center p-4"
-              key={link.shortened}
-            >
-              <p className="text-slate-600 truncate">{link.original}</p>
-              <div className="flex gap-4 items-center">
-                <p className="font-medium text-teal-600">{link.shortened}</p>
-                <button
-                  onClick={() => handleLinkCopy(link.shortened)}
-                  className="text-md md:text-lg font-bold text-white bg-teal-500 px-4 py-2 rounded-full cursor-pointer hover:bg-teal-600"
-                >
-                  {link.copied ? "Copied" : "Copy"}
-                </button>
+        {loading ? (
+          <div className="text-xl bg-slate-200 p-4 rounded">
+            Shortening link... Please wait...
+          </div>
+        ) : (
+          links.map((link) => {
+            return (
+              <div
+                className="flex flex-col md:flex-row justify-between items-center p-4 bg-slate-200 rounded"
+                key={link.shortened}
+              >
+                <p className="text-slate-600 truncate">{link.original}</p>
+                <div className="flex gap-4 items-center">
+                  <p className="font-medium text-teal-600">{link.shortened}</p>
+                  <button
+                    onClick={() => handleLinkCopy(link.shortened)}
+                    className="text-md md:text-lg font-bold text-white bg-teal-500 px-4 py-2 rounded-full cursor-pointer hover:bg-teal-600"
+                  >
+                    {link.copied ? "Copied" : "Copy"}
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </div>
   );
