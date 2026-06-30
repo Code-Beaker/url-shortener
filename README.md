@@ -27,7 +27,7 @@ I used React, TailwindCSS and TinyURL for this project. Also implemented a mobil
 
 ## Preview
 
-![Desktop](image.png)
+![Preview](Shortly.jpg)
 
 ## Tech Stack
 
